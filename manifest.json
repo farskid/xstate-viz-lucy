@@ -1,0 +1,24 @@
+{
+  "name": "xstate-viz-lucy",
+  "version": "0.1.0",
+  "manifest_version": 2,
+  "description": "A browser extension that adds support for the Lucy DSL in XState visualizer",
+  "homepage_url": "https://github.com/farskid/xstate-viz-lucy",
+  "author": "Farzad Yousefzadeh",
+  "permissions": ["https://xstate.js.org/viz/"],
+  "content_scripts": [
+    {
+      "matches": ["https://xstate.js.org/*"],
+      "css": ["styles.css"],
+      "js": ["inject.js"],
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    "lucy/liblucy-debug.wasm",
+    "lucy/liblucy-debug-browser.mjs",
+    "lucy/liblucy.mjs",
+    "lucy/main-browser-dev.js",
+    "debounce.js"
+  ]
+}
